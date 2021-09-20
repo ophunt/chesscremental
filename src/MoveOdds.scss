@@ -1,0 +1,23 @@
+.MoveOdds {
+  display: flex;
+  flex-direction: column;
+
+  width: 20rem;
+  border: 1px solid black;
+  padding: 1rem;
+
+  > :nth-child(1) {
+    font-weight: bold;
+    border-bottom: 1px solid black;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  p {
+    margin: 0;
+  }
+}

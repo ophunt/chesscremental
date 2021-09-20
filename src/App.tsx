@@ -1,16 +1,16 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import MoveOdds from "./MoveOdds";
+import "./App.scss";
+import Chessboard from "./Chessboard";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Hello World
-        </p>
-      </header>
+      <div className="AppMain">
+        <p>Upgrades here</p>
+        <Chessboard />
+        <MoveOdds />
+      </div>
     </div>
   );
 }
-
-export default App;
