@@ -3,6 +3,17 @@ import MoveOdds from "./MoveOdds";
 import "./App.scss";
 import Chessboard from "./Chessboard";
 import { Chess } from "@lubert/chess.ts";
+import { Dictionary } from "./Utils";
+
+const odds = {
+  Brilliant: [1, 1],
+  Best: [19, 19],
+  Excellent: [20, 20],
+  Good: [30, 30],
+  Inaccuracy: [15, 15],
+  Mistake: [10, 10],
+  Blunder: [5, 5],
+} as Dictionary<number[]>;
 
 export default function App() {
   const [chess, setChess] = useState(new Chess());
@@ -23,7 +34,7 @@ export default function App() {
       <div className="AppMain">
         <p>Upgrades here</p>
         <Chessboard fen={fen} />
-        <MoveOdds />
+        <MoveOdds odds={odds} />
       </div>
     </div>
   );
