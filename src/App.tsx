@@ -18,8 +18,9 @@ const odds = {
 export default function App() {
   const [chess, setChess] = useState(new Chess());
   const [fen, setFen] = useState(chess.fen());
+  const [evaluation, setEvaluation] = useState(0);
 
-  const reset = () => {
+  const resetBoard = () => {
     chess.reset();
     setFen(chess.fen());
   };
@@ -34,7 +35,13 @@ export default function App() {
       <div className="AppMain">
         <p>Upgrades here</p>
         <Chessboard fen={fen} />
-        <MoveOdds odds={odds} />
+        <div className="EvalOddsPanel">
+          <p>
+            {evaluation < 0 ? "" : "+"}
+            {evaluation.toFixed(2)}
+          </p>
+          <MoveOdds odds={odds} />
+        </div>
       </div>
     </div>
   );
