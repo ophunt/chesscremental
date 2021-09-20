@@ -6,7 +6,7 @@ import "./Chessboard.scss";
 export default function Chessboard({ fen }: { fen: string }) {
   return (
     <div className="Chessboard">
-      <Chessground fen={fen} movable={false} />
+      <Chessground fen={fen} viewOnly={true} coordinates={false} />
     </div>
   );
 }
